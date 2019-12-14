@@ -10,12 +10,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import 'hammerjs';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    EventListComponent
   ],
   imports: [
     BrowserModule,
