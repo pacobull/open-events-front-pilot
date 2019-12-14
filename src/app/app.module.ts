@@ -13,13 +13,15 @@ import { MatCardModule } from '@angular/material/card';
 import 'hammerjs';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { EventListComponent } from './event-list/event-list.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     ToolbarComponent,
-    EventListComponent
+    EventListComponent,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule,
