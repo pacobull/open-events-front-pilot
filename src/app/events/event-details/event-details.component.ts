@@ -24,4 +24,12 @@ export class EventDetailsComponent implements OnInit {
       this.event = event;
     });
   }
+
+  deleteEvent(event: Event) {
+    console.log(event);
+    this.eventService.deleteEvent(event.id).subscribe(() => {
+      console.log('Event Removed');
+    });
+    this.router.navigate(['/events']);
+  }
 }
