@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './core/auth-guard.service';
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { EventListComponent } from './events/event-list/event-list.component';
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'eventDetails/:id', component: EventDetailsComponent },
   { path: 'addEditEvent/:id', component: AddEditEventComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'addEditEvent/:id', component: AddEditEventComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
@@ -25,6 +28,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule {}
