@@ -14,6 +14,17 @@ import { environment } from '../../environments/environment';
 export class EventService {
   constructor(private http: HttpClient) {}
 
+  getEvent(id: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return this.http.get(environment.apiURL + 'events/' + id, { headers }).pipe(
+      retry(3),
+      catchError(this.handleError)
+    );
+  }
+
   getEvents(): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
