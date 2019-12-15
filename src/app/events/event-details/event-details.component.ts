@@ -18,7 +18,7 @@ export class EventDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const id = this.route.snapshot.params['id'];
+    const id = this.route.snapshot.params.id;
     this.eventService.getEvent(id).subscribe((event: Event) => {
       console.log(event);
       this.event = event;
