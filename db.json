@@ -41,5 +41,11 @@
       "addedBy": "user01"
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "ptorom@gmail.com",
+      "password": "invitado",
+      "id": 1
+    }
+  ]
 }
