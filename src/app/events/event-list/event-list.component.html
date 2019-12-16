@@ -4,6 +4,18 @@
       Add Event
     </button>
   </div>
+
+  <div class="filters">
+    Filter:
+    <mat-slide-toggle
+          class="slide-mis-eventos"
+          [checked]="false"
+          [(ngModel)]="slideMyEvents"
+          (change)="myEventsChange()">
+        My events
+      </mat-slide-toggle>
+  </div>
+
   <div id="eventTable">
     <table mat-table [dataSource]="events" class="mat-elevation-z8">
       <caption>Events</caption>

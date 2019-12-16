@@ -67,7 +67,7 @@ export class UserService {
   }
 
   private setUser() {
-    this.isAuthenticated = localStorage.getItem('user') !== undefined;
+    this.isAuthenticated = localStorage.getItem('user') ? true : false;
     this.isAuthenticated ? this.store.dispatch(new login.Logged(true)) : this.store.dispatch(new login.Logged(false));
   }
 
